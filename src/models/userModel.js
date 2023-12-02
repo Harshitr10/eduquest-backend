@@ -15,7 +15,22 @@ const userSchema = new mongoose.Schema(
     userImg: { type: String },
     codechefId: { type: String },
     leetcodeId: { type: String },
+    leetcode: {
+        easy: { type: Number, default: 0 },
+        medium: { type: Number, default: 0 },
+        hard: { type: Number, default: 0 },
+      },
+      skills: [
+        {
+          type: String,
+          enum: ["JavaScript", "Python", "Java", "C++", "HTML", "CSS", "React", "Node.js", "MongoDB", "SQL", "Other"],
+        },
+      ],
+      otherSkills:{
+        type:String,
+     },
     codeforcesId: { type: String },
+    linkedinId: { type: String },
     githubId: { type: String },
     password: { type: String, required: true },
   },
